@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google Maps Müşteri Noktaları</title>
+    <link rel="stylesheet" href="UI.css">
+    <link id="theme-stylesheet" rel="stylesheet" href="light-mode.css">
+    <!-- Pop u paçılınca marker üzerinde, onun rengini ayarlamak için yapılan kod. Tam boyamıyor, biraz yarım yamalak boyuyor. -->
+    <!-- <style> 
+        .gm-style-iw.gm-style-iw-c {
+            background-color: rgb(0, 255, 238) !important;
+        }
+    </style> -->
+</head>
+<body>
+    <!-- Tema butonları -->
+    <div class="theme-toggle">
+        <button id="light-mode-btn" onclick="setLightMode()">🌞</button>
+        <button id="dark-mode-btn" onclick="setDarkMode()">🌜</button>
+    </div>
+    
+    <h1 class="right-align">Şirket Haritası Uygulaması</h1>
+
+    <!-- Butonlar -->
+    <button class="button" id="openFilterModal">Müşteri Filtreleme</button>
+    <button class="button" id="openCreateCompanyModal">Yeni Şirket Oluşturma</button>
+    <button class="button" id="openDeleteCompanyModal">Şirket Sil</button>
+    <button class="button" id="startSelectionButton">Haritadan Seçim Yap</button>
+
+
+    <!-- Müşteri Filtreleme Modal -->
+    <div id="filterModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="filterClose">&times;</span>
+            <h2>Müşteri Filtreleme</h2>
+            <label for="ciro">Ciro:</label>
+            <input type="number" id="ciro" name="ciro">
+           
+            <label for="sirket_kodu">Şirket Kodu:</label> 
+            <input type="text" id="sirket_kodu" name="sirket_kodu">
+            
+            <label for="sirket">Şirket Adı:</label>
+            <input type="text" id="sirket" name="sirket">
+
+            <label for="adi">Ceo Adı:</label>
+            <input type="text" id="adi" name="adi">
+            
+            <label for="yerli">Yerli/Yabancı:</label>
+            <input type="text" id="yerli" name="yerli">
+            
+            <button class="button" id="deleteButton"onclick="filterCustomers()">Filtrele</button>
+        </div>
+    </div>
+
+
+    <!-- Var Olan Şirket Silmek Modal -->
+<div id="deleteCompanyModal" class="modal">
+    <div class="modal-content">
+        <span class="close" id="deleteCompanyClose">&times;</span>
+        <h2>Şirket Silme</h2>
+
+        <div class="form-group">
+            <label for="delete_sirket_kodu">Şirket Kodu:</label>
+            <input type="text" id="delete_sirket_kodu" name="delete_sirket_kodu">
+        </div>        
+
+        <button class="button" id="deleteCompanyButton">Sil</button>
+    </div>
+</div>
+    
+
+    <!-- Yeni Şirket Oluşturma Modal -->
+    <div id="createCompanyModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="createCompanyClose">&times;</span>
+            <h2>Yeni Şirket Oluştur</h2>
+            <div class="form-group">
+                <label for="code">Şirket Kodu:</label>
+                <input type="text" id="code" name="code">
+            </div>
+            <div class="form-group">
+                <label for="title">Şirket Adı:</label>
+                <input type="text" id="title" name="title">
+            </div>
+            <div class="form-group">
+                <label for="lat">Enlem:</label>
+                <input type="number" id="lat" name="lat" step="any">
+            </div>
+            <div class="form-group">
+                <label for="lng">Boylam:</label>
+                <input type="number" id="lng" name="lng" step="any">
+            </div>
+            <div class="form-group">
+                <label for="type">Yerli / Yabancı:</label>
+                <input type="text" id="type" name="type">
+            </div>
+            <div class="form-group">
+                <label for="name">CEO:</label>
+                <input type="text" id="name" name="name">
+            </div>
+            <div class="form-group">
+                <label for="revenue">Ciro:</label>
+                <input type="number" id="revenue" name="revenue" step="any">
+            </div>
+            <div class="form-group">
+                <label for="profit">Kâr:</label>
+                <input type="number" id="profit" name="profit" step="any">
+            </div>
+            
+            <button class="button" onclick="createCompany()">Oluştur</button>
+        </div>
+    </div>
+
+    <div id="info"></div>
+    <div id="map"></div>
+    <div id="companyList"></div>
+
+    <script src="api.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key="Your API KEY"&libraries=drawing,geometry&callback=initMap" async defer></script>
+    
+   
+    
+</body>
+</html>

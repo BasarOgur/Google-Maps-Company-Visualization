@@ -1,0 +1,149 @@
+/* Genel stil ayarları */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Garamond', serif; /* Modern ve okunabilir bir yazı tipi */
+    color: #333; /* Koyu gri metin rengi */
+    background-color: #f5f5f5; /* Hafif gri arka plan rengi */
+}
+
+/* Filtre konteynerindeki etiketler ve girişler */
+.filter-container label {
+    font-weight: bold;
+    color: #444; /* Koyu gri metin rengi */
+    display: block; /* Her etiketin bir satıra yerleşmesini sağlar */
+    margin-bottom: 8px; /* Etiket ile giriş alanı arasına boşluk ekler */
+}
+
+/* Filtre konteynerindeki giriş alanları ve form grubu giriş alanları */
+.filter-container input,
+.form-group input {
+    padding: 8px;
+    border: 1px solid #ccc; /* Hafif gri sınır */
+    border-radius: 4px; /* Köşeleri yuvarlat */
+    font-size: 14px; /* Okunabilir yazı boyutu */
+    margin-bottom: 12px; /* Giriş alanları arasında boşluk ekler */
+    width: 100%; /* Giriş alanlarının genişliği */
+    box-sizing: border-box; /* Genişlik hesaplamasında padding ve border'ı dahil eder */
+}
+
+/* Konteyner stilleri */
+.filter-container {
+    display: flex;
+    flex-direction: column; /* Elemanları dikey olarak sıralar */
+    background-color: #ffffff; /* Temiz beyaz arka plan */
+    padding: 15px;
+    border-radius: 8px; /* Köşeleri yuvarlat */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+    margin: 30px; /* Kenarlardan biraz boşluk */
+}
+
+/* Bilgi bölümü */
+#info {
+    text-align: center;
+    padding: 15px;
+    background-color: #ffffff; /* Temiz beyaz arka plan */
+    font-weight: bold;
+    border-radius: 8px; /* Köşeleri yuvarlat */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+    margin: 10px; /* Kenarlardan biraz boşluk */
+}
+
+/* Harita bölümü */
+#map {
+    height: 90%;
+    width: 100%;
+    border-radius: 8px; /* Köşeleri yuvarlat */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+}
+
+/* Ortalanmış metin */
+.right-align {
+    text-align: center;
+    font-size: 32px;
+}
+
+/* Ortak buton stilleri */
+button {
+    padding: 10px 15px;
+    background-color: #007BFF; /* Mavi buton rengi */
+    color: #fff; /* Beyaz metin rengi */
+    border: none;
+    border-radius: 4px; /* Köşeleri yuvarlat */
+    font-size: 16px; /* Buton yazı boyutu */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3; /* Hover durumunda koyu mavi */
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.theme-toggle button {
+    padding: 10px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+/* Modal (Pop-up) Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
